@@ -1,0 +1,47 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Django Stuff:
+*.log
+db.sqlite3
+media/
+staticfiles/
+static/
+
+# Secret environment variables
+.env
+
+# VSCode / PyCharm / other IDEs
+.vscode/
+.idea/
+
+# Celery
+celerybeat-schedule
+
+# Python virtual environments
+venv/
+telegram_venv/
+ENV/
+env/
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+desktop.ini
+
+# Redis dump
+dump.rdb
+
+# Git itself
+.git/
+
+# Coverage reports
+htmlcov/
+.coverage
+
+# pytest
+.pytest_cache/
