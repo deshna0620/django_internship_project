@@ -1,8 +1,22 @@
 from django.contrib import admin
 from django.urls import path, include
+from django.http import JsonResponse
+
+def home(request):
+    return JsonResponse({
+        "project": "Django Internship Project",
+        "status": "Running",
+        "message": "Welcome to the API backend.",
+        "available_endpoints": [
+            "/api/items/ - Public endpoint",
+            "/api/protected/ - JWT Protected endpoint",
+            "/api/register/ - User Registration",
+            "/api/token/ - Get JWT Token"
+        ]
+    })
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include('mainapp.urls')),
-    path('api-auth/', include('rest_framework.urls')),  # 👈 Needed for DRF login/logout in browser
+    path('', home),
 ]

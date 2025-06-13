@@ -1,10 +1,9 @@
 from django.urls import path
-from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
-from .views import ItemListCreateView, ProtectedView
+from .views import PublicAPI, ProtectedAPI, user_login, UserRegistrationAPI
 
 urlpatterns = [
-    path('items/', ItemListCreateView.as_view(), name='item-list'),      # Public
-    path('protected/', ProtectedView.as_view(), name='protected'),       # Protected
-    path('token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),  # Login (Token Generation)
-    path('token/refresh/', TokenRefreshView.as_view(), name='token_refresh'), # Refresh Token
+    path('items/', PublicAPI.as_view(), name='public_api'),
+    path('protected/', ProtectedAPI.as_view(), name='protected_api'),
+    path('register/', UserRegistrationAPI.as_view(), name='register_api'),
+    path('login/', user_login, name='login'),
 ]
